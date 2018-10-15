@@ -9,7 +9,7 @@ const router = express.Router();
 
 router.get('/', (req, res)=>{
     Photo.find({}, (err, foundPhotos)=>{
-        res.render('users/index.ejs', {
+        res.render('photos/index.ejs', {
             photos: foundPhotos
         });
     });
