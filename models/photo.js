@@ -5,7 +5,7 @@ const photoSchema = new mongoose.Schema({
     size: String,
 })
 
-const User = mongoose.model('Photos', photoSchema);
-module.exports = User;
+const Photo = mongoose.model('Photos', photoSchema);
+module.exports = Photo;
 
-// module.exports = mongoose.model('User', userSchema);
+// module.exports = mongoose.model('Photos', userSchema);
