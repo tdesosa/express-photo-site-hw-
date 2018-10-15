@@ -4,9 +4,15 @@ const port = 3000;
 const bodyParser = require('body-parser');
 const methodOverride = require('method-override');
 
-// Require Mongo Db
+// REQUIRE ACCESS TO MONGO
+
 require('./db/db')
 
+// LANDING PAGE
+
+app.get('/', (req, res)=>{
+    res.render('landing.ejs');
+});
 
 // SERVER IS LISTNEING
 
