@@ -64,4 +64,10 @@ router.put('/:id', (req, res)=>{
 
 // Delete Route
 
+router.delete('/:id', (req, res)=>{
+    Photo.findByIdAndDelete(req.params.id, (err, deletedPhoto)=>{
+        res.redirect('/photos')
+    })
+})
+
 module.exports = router;
