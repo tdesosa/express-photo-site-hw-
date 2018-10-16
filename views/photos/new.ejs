@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>New Photo Page</title>
+</head>
+<body>
+  <header>
+    <h1>Create A New Photo</h1>
+    <nav>
+      <ul>
+        <li><a href="/">Return To Homepage</a></li>
+        <li><a href="/photos">Photos Index</a></li>
+      </ul>
+    </nav>
+  </header><!-- /header -->
+  <main>
+    <form action="/photos" method="POST">
+      Name: <input type="text" name="name" value="photo name">
+      Image: <input type="text" name="img" value="image url">
+      <button type="submit">Add Photo</button>
+    </form>
+  </main>
+
+</body>
+</html>

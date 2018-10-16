@@ -15,4 +15,23 @@ router.get('/', (req, res)=>{
     });
 });
 
+// New Route
+
+router.get('/new', (req, res)=>{
+    res.render('photos/new.ejs');
+});
+
+// Create Route
+
+router.post('/', (req, res)=>{
+    Photo.create(req.body, (err, newPhoto)=>{
+        console.log(newPhoto);
+        if(err){
+        console.log(err);
+        } else {
+            res.redirect('/photos');
+        }
+    });
+});
+
 module.exports = router;
