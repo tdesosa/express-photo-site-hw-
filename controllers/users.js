@@ -27,9 +27,19 @@ router.get('/:id', (req, res)=>{
     User.findById(req.params.id, (err, foundUser)=>{
         res.render("users/show.ejs", {
             user: foundUser
-        })
-    })
-})
+        });
+    });
+});
+
+// Edit Route
+
+router.get('/:id/edit', (req, res)=>{
+    User.findById(req.params.id, (err, foundUser)=>{
+        res.render('users/edit.ejs', {
+            user: foundUser
+        });
+    });
+});
 
 // Create Route
 
@@ -43,5 +53,16 @@ router.post('/', (req, res)=>{
         }
     });
 });
+
+// Update Route
+
+router.put('/:id', (req, res)=>{
+    User.findByIdAndUpdate(req.params.id, req.body, (err, newUser)=>{
+        res.redirect(`/users/${req.params.id}`)
+    });
+});
+
+// Delete Route
+
 
 module.exports = router;
