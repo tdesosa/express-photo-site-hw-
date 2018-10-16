@@ -21,6 +21,16 @@ router.get('/new', (req, res)=>{
     res.render('photos/new.ejs');
 });
 
+// Show Route
+
+router.get('/:id', (req, res)=>{
+   Photo.findById(req.params.id, (err, foundPhoto)=>{
+        res.render("photos/show.ejs", {
+            photo: foundPhoto
+        })
+    })
+})
+
 // Create Route
 
 router.post('/', (req, res)=>{

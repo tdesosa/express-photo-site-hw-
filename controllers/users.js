@@ -21,6 +21,16 @@ router.get('/new', (req, res)=>{
     res.render('users/new.ejs');
 });
 
+// Show Route
+
+router.get('/:id', (req, res)=>{
+    User.findById(req.params.id, (err, foundUser)=>{
+        res.render("users/show.ejs", {
+            user: foundUser
+        })
+    })
+})
+
 // Create Route
 
 router.post('/', (req, res)=>{
