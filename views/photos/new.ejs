@@ -18,6 +18,11 @@
       Name: <input type="text" name="name" value="photo name">
       Image: <input type="text" name="img" value="image url">
       <button type="submit">Add Photo</button>
+      <select name="userId">
+        <% for(i = 0; i < users.length; i++) { %>
+        <option value="<%= users[i]._id %>"><%=users[i].username%></option>
+        <% } %>
+      </select>
     </form>
   </main>
 
